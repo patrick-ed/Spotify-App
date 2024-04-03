@@ -15,6 +15,8 @@ Documentation for this need to be updated
 
 ### home.html
 ![image](https://github.com/patrick-ed/Spotify-App/assets/131492545/65b449c3-7463-4ebe-871a-91d6410220e3)
+![image](https://github.com/patrick-ed/Spotify-App/assets/131492545/a3cf6c40-3640-46c4-8ba1-dd01caf007ac)
+
 
 
 ### playlistCart.html
