@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../images/spotifyLogo1.png" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="../js/playlistCart.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/playlistCart.css">
+    <title>Spotfy Apps</title>
+  </head>
+
+  <!-- nav bar-->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="./index.html">Spotify app</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="./home.html">HomeBtn<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./playlistCart.html">playlist cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./profile.html">profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./trackWall.html">track wall</a>
+            </li>
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+<!-- MAIN BODY-->
+<body>
+
+    <h1>Playlist Cart</h1>
+    <section id = "profile">
+
+        <h3><span id="displayName"></span></h3>
+        <span id="avatar"></span>
+    </section>
+    <br>
+    <div class="container-fluid">
+        
+        <div class="row ">
+            <div class="col col-xl-6">
+                <h4>tracks in cart</h4>
+                <div id="playlistContainer" style="padding-top: 40px;">
+                    <!-- tracks in playlist gets added here -->
+                </div>
+            </div>
+
+            <div class="col col-xl-6">
+
+                <h4>Playlist Creation</h4> 
+
+                <form id="playlistForm">
+                    <label for="name">Playlist Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                    
+                    <label for="description">Description:</label><br>
+                    <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+                    
+
+                    <input type="checkbox" id="public" name="public" value="isPublic" checked>
+                    <label for="public">Public</label><br><br>
+
+                    
+                    <input type="submit" value="Create Playlist">
+                  </form>
+
+                
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>

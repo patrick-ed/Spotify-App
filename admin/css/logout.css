@@ -1,0 +1,13 @@
+/* css file for logout.html */
+.logout-message {
+    background-color: #FF0000; /* Red background color, you can change this */
+    color: #FFFFFF; /* White text color, you can change this */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: none;
+}

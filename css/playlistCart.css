@@ -1,0 +1,36 @@
+button[type="button"]{
+    border-radius: 100%;
+    font-size: 30px;
+    border: none;
+    background: none;
+    color: #FFFF !important;
+}
+body{
+    
+    background-color: #252525;
+    text-align: center;
+    color: #FFFF;
+
+}
+
+.trackName{
+    font-weight: bold;
+}
+.artistName{
+    font-weight: 400;
+    font-style: italic;
+}
+
+.duration {
+    font-weight: 100;
+    font-size: 12px;
+}
+
+button.removeBtn:hover{
+    color: rgb(138, 29, 29) !important;
+}
+
+.totalDuration {
+    font-size: x-large;
+    font-weight: bolder;
+}

@@ -1,0 +1,52 @@
+
+z9qiannyavyy09dnv7tcgqxhz
+
+--Selects the users saved tracks 
+SELECT track.trackID, track.trackName, track.artist, track.duration,track.albumCover, usersavedtracks.dateAdded
+FROM track, usersavedtracks, users
+WHERE usersavedtracks.trackID = track.trackID 
+AND usersavedtracks.userID = users.userID
+AND users.userID = "<userID>"
+
+--Selects the artists of the saved tracks of the user
+SELECT artist.artistID, artist.artistName, artist.followers, artist.popularity
+FROM track, usersavedtracks, users, artist, trackcreatedby
+WHERE usersavedtracks.trackID = track.trackID 
+AND usersavedtracks.userID = users.userID
+AND trackcreatedby.trackID = track.trackID
+AND trackcreatedby.artistID = artist.artistID
+AND users.userID = "<userID>"
+
+--Selects the artists discovered by the user via saved tracks (no duplicates)
+SELECT DISTINCT artist.artistID, artist.artistName, artist.followers, artist.popularity
+FROM track, usersavedtracks, users, artist, trackcreatedby
+WHERE usersavedtracks.trackID = track.trackID 
+AND usersavedtracks.userID = users.userID
+AND trackcreatedby.trackID = track.trackID
+AND trackcreatedby.artistID = artist.artistID
+AND users.userID = "<userID>"
+
+--Selects the genres of the artists from the user's saved tracks
+SELECT artist.artistID ,genreartist.genreID , artist.artistName, artist.followers, artist.popularity
+FROM track,users,usersavedtracks,trackcreatedby,artist,genreartist
+WHERE track.trackID = usersavedtracks.trackID
+AND users.userID = usersavedtracks.userID
+AND trackcreatedby.trackID = track.trackID
+AND trackcreatedby.artistID = artist.artistID
+AND genreartist.artistID = artist.artistID
+AND users.userID = "<userID>"
+
+
+-- DELETE users saved tracks
+
+DELETE
+FROM usersavedtracks
+WHERE usersavedtracks.userID = "<userID>"
+
+DELETE
+FROM users
+WHERE users.userID = "<userID>"
+  
+
+
+"z9qiannyavyy09dnv7tcgqxhz"

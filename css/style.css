@@ -1,0 +1,204 @@
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+
+
+.tooltip {
+  position: absolute;
+  background-color: #fff;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  border-radius: 5px; 
+}
+
+
+
+
+
+.slide-container {
+  margin-top: 56px;
+  background-color: #242424;
+}
+
+.genre-container {
+  margin-top: 56px;
+  position: fixed;
+  top: 0;
+  right: -300px; /* Initially off-screen */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-out;
+  z-index: 1000;
+}
+
+#genre-container {
+  margin-top: 56px;
+  position: fixed;
+  top: 0;
+  right: -400px; /* Initially off-screen */
+  width: 400px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-out;
+  z-index: 1000;
+}
+
+#addToPlaylistBtn {
+
+  color: #fff;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+
+
+
+.trackName{
+  font-weight: bold;
+}
+.artistName{
+  font-weight: 400;
+  font-style: italic;
+}
+.duration {
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.trackNameDetails{
+  font-size: large;
+  font-weight: bold;
+}
+.artistNameDetails{
+  font-size: large;
+  font-weight: 400;
+  font-style: italic;
+}
+.durationDetails {
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.albumnNameDetails{
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.releaseDateDetails{
+
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+
+}
+
+
+
+.detail-window {
+  position: absolute;
+  bottom: -400px; /* Initially off-screen */
+  height: 400px; 
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.3s ease-out;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#trackDetails {
+  position: absolute;
+  bottom: -400px; /* Initially off-screen */
+  height: 400px; 
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.3s ease-out;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.slide-content {
+  padding: 16px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.navbar {
+  background-color: #00ff08;
+}
+
+.track-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.track-title {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.artist-text {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.play-button,
+.add-to-playlist-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.ul{
+  margin-block-start: 100em;
+
+}
+
+#settingModal .modal-dialog {
+  max-width: 800px;
+  width: 100%;
+}

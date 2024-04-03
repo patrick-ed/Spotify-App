@@ -1,0 +1,42 @@
+html{
+    margin: 10px;
+    padding-top: 65px;
+    
+
+}
+
+body{
+    
+    background-color: #252525;
+    text-align: center;
+    color: #FFFF;
+
+}
+
+section{
+    padding-left: 25px;
+}
+
+ul{
+    text-align: start;
+    margin-left: 80px;
+    padding-left: 100px;
+}
+
+li{
+    margin-bottom: 5px;
+
+
+}
+
+#tooltip {
+    position: absolute;
+    background-color: #252525;
+    border: 1px solid #FFFF;
+    border-radius: 5px;
+    padding: 5px;
+    pointer-events: none;
+}
+
+
+
