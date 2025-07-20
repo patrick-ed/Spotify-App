@@ -4,6 +4,8 @@ This is my database backed web application project utilising spotifyAPI and D3
 ### Running the web
 To run this application, I use [XAMPP](https://www.apachefriends.org/) to run local host and [PHPMyAdmin](https://www.phpmyadmin.net/) for the database.
 
+name the root folder 'spotifyvisualisationv2' for redirect URLs to work properly. if you want to name it differently, chagne the redirect URLs.
+
 ### Documentation
 Documentation for this need to be updated 
 
