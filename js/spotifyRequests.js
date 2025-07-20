@@ -134,6 +134,7 @@ export async function search(seed_genre,offset){ //https://developer.spotify.com
 
 }
 
+// DEPRECATED API
 export async function fetchTrackFeatues(trackIds){
 
 
@@ -143,7 +144,7 @@ export async function fetchTrackFeatues(trackIds){
         method: "GET", 
         headers: { Authorization: `Bearer ${localStorage.getItem("accessToken")}` }
     });
-
+    
     return await result.json();
 
 }

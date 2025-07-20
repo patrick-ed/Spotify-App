@@ -36,7 +36,7 @@ else{
      
     ///* FOR CONNECTING TO SPOTIFY SERVER
     console.log(redirectURL)
-    accessToken = await getAccessToken(clientId, code,"http://localhost/spotifyVisualisation/pages/home.html");//Requests access token from spotify
+    accessToken = await getAccessToken(clientId, code,"http://localhost/spotifyVisualisationv2/pages/home.html");//Requests access token from spotify
     console.log(accessToken);//Access token required to access spotify api
 
     //https://digital.notredamecoll.ac.uk/students/intake2022/S2200859/NEA/spotifyVisualisation/pages/home.html
@@ -115,6 +115,8 @@ async function deleteUser(){
 
 
 async function getUserData(accessToken){
+
+    const ENABLE_DB_HANDLING = false
     
     console.log("fetching user profile")
     var userProfile = await sptfy.fetchProfile(accessToken);
@@ -162,7 +164,7 @@ async function getUserData(accessToken){
     console.log("fetching saved tracks")
     var savedTracks = await sptfy.fetchSavedTracks(accessToken,20,trackCount)//add trackCount param here
     var trackIds = compileTrackIds(savedTracks)
-    var trackFeatures = await fetchTrackFeatures(trackIds,50)
+    // var trackFeatures = await fetchTrackFeatures(trackIds,50) // DEPRECATED API 
     
 
     
@@ -184,27 +186,26 @@ async function getUserData(accessToken){
         topItems: topItems,
         savedTracks: savedTracks,
         trackIds: trackIds,
-        trackFeatures: trackFeatures,
         artistDetails: artistDataDB,
+        //trackFeatures: trackFeatures, // DEPERECATED API
         //artistIds: artistIds
         //topGenres: topGenres
         //artistDetails: artistDetails, //legacy artistdetails
         //discoveredArtists: discoveredArtists, //legacy artist occurences
     }
     
-
     //DATABASE HANDLING 
     //Inserts any new data gathered
     localStorage.setItem("userData",JSON.stringify(userData))
 
-    console.log("inserting new records into db")
-    await insertSavedTracks(savedTracks);//their saved tracks are added onto the DB
-    await insertTrackFeatures(trackFeatures);//Saves track features into DB
-    await insertArtists(artistDetails);
-    await connectArtistsToTracks(savedTracks);
+    if(ENABLE_DB_HANDLING){
+        console.log("inserting new records into db")
+        await insertSavedTracks(savedTracks);//their saved tracks are added onto the DB
+        await insertTrackFeatures(trackFeatures);//Saves track features into DB
+        await insertArtists(artistDetails);
+        await connectArtistsToTracks(savedTracks);
+    }
 
-    
-    
     console.log("DONE")
     console.log(userData)
     return userData;
@@ -219,9 +220,6 @@ async function processArtists(rawArtistData){ //Takes in data records and create
     for (let i = 0; i< rawArtistData.length;i++){
 
         let selectedArtist = rawArtistData[i]
-
-        
-
         if(!(selectedArtist.artistName in occurences)){
             
             artistData.push(selectedArtist)
@@ -229,18 +227,11 @@ async function processArtists(rawArtistData){ //Takes in data records and create
         countOccurences(selectedArtist.artistName,occurences)
         //if (!occurences.includes(selectedArtist.artistName)) {artistData.push(selectedArtist)}
         //countOccurences(selectedArtist.artistName,occurences)
-        
     }
-
-
-    
-
-
     return {
         artistData: artistData,
         occurences: occurences
     }
-
 }
 
 
@@ -356,6 +347,7 @@ async function insertArtists(artists){
 
 }
 
+// DEPRECATED
 async function fetchTrackFeatures(savedTracks,chunkSize){
     
     var trackFeatures = new Array();
