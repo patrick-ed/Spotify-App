@@ -116,7 +116,7 @@ async function deleteUser(){
 
 async function getUserData(accessToken){
 
-    const ENABLE_DB_HANDLING = false
+    const ENABLE_DB_HANDLING = true
     
     console.log("fetching user profile")
     var userProfile = await sptfy.fetchProfile(accessToken);
@@ -201,7 +201,7 @@ async function getUserData(accessToken){
     if(ENABLE_DB_HANDLING){
         console.log("inserting new records into db")
         await insertSavedTracks(savedTracks);//their saved tracks are added onto the DB
-        await insertTrackFeatures(trackFeatures);//Saves track features into DB
+        // await insertTrackFeatures(trackFeatures);//Saves track features into DB DEPRECATED API
         await insertArtists(artistDetails);
         await connectArtistsToTracks(savedTracks);
     }
