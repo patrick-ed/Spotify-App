@@ -3,17 +3,11 @@
 
     $conn = "";
 
-    $servername = '127.0.0.1'; // server IP address
-    //10.0.0.217
-    //127.0.0.1
+    $servername = '127.0.0.1'; // localhost
 
-    $username = 'root'; // username
-    //S2200859_P_Dumdum
-    //root
+    $username = 'root';
 
-    $password = ''; //  password
-    //NeaNdcoll-59
-    //
+    $password = '';
     
     $database = 'p_dumdum_db'; // database name
     
@@ -32,3 +26,4 @@
     
 
 ?>
+
